@@ -1,0 +1,165 @@
+/* ── Página principal de autenticación ───────────────────── */
+.auth {
+  min-height: 100vh;
+  background-color: var(--color-beige);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+}
+
+/* ── Contenedor del formulario ────────────────────────────── */
+.auth__container {
+  background-color: var(--color-white);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-width: 500px;
+  padding: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+/* ── Header del formulario ────────────────────────────────── */
+.auth__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.auth__eyebrow {
+  font-family: var(--font-accent);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--color-brown-gold);
+}
+
+.auth__title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--fs-2xl), 4vw, var(--fs-3xl));
+  font-weight: var(--fw-light);
+  color: var(--color-dark);
+  letter-spacing: var(--ls-tight);
+}
+
+.auth__subtitle {
+  font-size: var(--fs-base);
+  color: var(--color-gray);
+  line-height: var(--lh-relaxed);
+}
+
+/* ── Formulario ───────────────────────────────────────────── */
+.auth__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Grupos de campos — reutiliza .form-group de main.css */
+.auth__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* ── Footer del formulario ────────────────────────────────── */
+.auth__form-footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+/* ── Texto de footer (links para cambiar página) ─────────── */
+.auth__footer-text {
+  font-size: var(--fs-sm);
+  color: var(--color-gray);
+  text-align: center;
+}
+
+.auth__footer-text a {
+  color: var(--color-brown-gold);
+  text-decoration: none;
+  font-weight: var(--fw-medium);
+  transition: color var(--transition-base);
+}
+
+.auth__footer-text a:hover {
+  color: var(--color-brown-dark);
+}
+
+/* ── Separador ───────────────────────────────────────────── */
+.auth__divider {
+  position: relative;
+  text-align: center;
+  margin: var(--space-6) 0;
+}
+
+.auth__divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--color-beige-dark);
+}
+
+.auth__divider span {
+  background-color: var(--color-white);
+  padding: 0 var(--space-4);
+  font-size: var(--fs-sm);
+  color: var(--color-gray);
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-widest);
+}
+
+/* ── Estados de carga y error ────────────────────────────── */
+.auth__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  color: var(--color-gray);
+  font-size: var(--fs-sm);
+}
+
+.auth__error {
+  background-color: rgba(198, 40, 40, 0.05);
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  color: var(--color-error);
+  font-size: var(--fs-sm);
+  text-align: center;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .auth {
+    padding: var(--space-4);
+  }
+
+  .auth__container {
+    padding: var(--space-8);
+    gap: var(--space-6);
+  }
+
+  .auth__title {
+    font-size: var(--fs-2xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .auth__container {
+    padding: var(--space-6);
+  }
+
+  .auth__form {
+    gap: var(--space-4);
+  }
+}

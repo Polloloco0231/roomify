@@ -4,32 +4,646 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Rincòn del Carmen</title>
+    <link rel="stylesheet" href="styles/variables.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+    
     <link rel="stylesheet" href="styles/components/navbar.css">
+    <link rel="stylesheet" href="styles/components/footer.css" />
+    <link rel="stylesheet" href="styles/components/card.css" />
+    <link rel="stylesheet" href="styles/components/modal.css" />
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header class="navbar">
-        <div class="logo-container">
-            <h1 class="logo">Rincòn del</h1>
-            <h1 class="logo">Carmen</h1>
+<body class="page-wrapper">
+ 
+  <!-- ================================================================
+       NAVBAR — Componente Web reutilizable
+       Archivo: js/components/navbar/navbar.js
+       ================================================================ -->
+  <navbar-component></navbar-component>
+ 
+ 
+  <!-- ================================================================
+       MAIN — Contenido principal de la landing page
+       ================================================================ -->
+  <main class="main-content">
+ 
+ 
+    <!-- ============================================================
+         SECCIÓN 1: HERO
+         Imagen de fondo principal del hotel con mensaje de bienvenida
+         y botones de llamada a la acción (CTA).
+         ============================================================ -->
+    <section class="hero" id="inicio">
+ 
+      <!-- 
+        IMAGEN DE FONDO DEL HERO:
+        Opción A (CSS): En home.css busca `.hero` y cambia la propiedad
+                        background-image: url('../assets/images/hotel/hero.jpg');
+        Opción B (JS):  En js/pages/home.js puedes cargarla dinámicamente.
+      -->
+ 
+      <!-- Overlay oscuro sobre la imagen -->
+      <div class="hero__overlay"></div>
+ 
+      <!-- Contenido centrado del hero -->
+      <div class="hero__content container">
+ 
+        <!-- EYEBROW: Texto pequeño decorativo encima del título -->
+        <!-- Ejemplo: "Bucaramanga, Colombia" o "Bienvenidos" -->
+        <span class="hero__eyebrow">
+          <!-- ✏️ ESCRIBE AQUÍ el texto decorativo pequeño -->
+          Bienvenidos al
+        </span>
+ 
+        <!-- TÍTULO PRINCIPAL del hotel -->
+        <h1 class="hero__title">
+          <!-- ✏️ ESCRIBE AQUÍ el nombre del hotel -->
+          Hotel El Rincón<br />
+          <em>del Carmen</em>
+        </h1>
+ 
+        <!-- SUBTÍTULO / descripción corta del hotel -->
+        <p class="hero__subtitle">
+          <!-- ✏️ ESCRIBE AQUÍ una frase corta que describa el hotel -->
+          <!-- Ejemplo: "Un refugio de paz, lujo y naturaleza en el corazón de la ciudad." -->
+        </p>
+ 
+        <!-- BOTONES CTA -->
+        <div class="hero__actions">
+          <!-- Botón principal: lleva a la página de reservas -->
+          <a href="reservas.html" class="btn btn--secondary btn--lg">
+            Reservar Ahora
+          </a>
+          <!-- Botón secundario: scroll a sección de habitaciones -->
+          <a href="#habitaciones" class="btn btn--outline-white btn--lg">
+            Ver Habitaciones
+          </a>
         </div>
-
-        <input type="checkbox" id="menu-toggle">
-        <nav class="menu">
-            <label for="menu-toggle" class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M4 11h16v2H4zm0-5h16v2H4zm0 10h16v2H4z"></path>
-                </svg>
-            </label>
-        </nav>
-    </header>
-
-    <main>
-
-    </main>
-
-    <footer>
-
-    </footer>
+ 
+      </div>
+ 
+      <!-- Indicador de scroll hacia abajo -->
+      <div class="hero__scroll-indicator">
+        <span></span>
+      </div>
+ 
+    </section>
+    <!-- FIN HERO -->
+ 
+ 
+    <!-- ============================================================
+         SECCIÓN 2: ESTADÍSTICAS / CIFRAS DEL HOTEL
+         Números destacados: años de experiencia, habitaciones, etc.
+         ============================================================ -->
+    <section class="stats section--sm section--white">
+      <div class="container">
+        <div class="stats__grid">
+ 
+          <!-- ESTADÍSTICA 1 -->
+          <div class="stats__item">
+            <!-- ✏️ ESCRIBE AQUÍ el número -->
+            <span class="stats__number">15</span>
+            <!-- ✏️ ESCRIBE AQUÍ la etiqueta -->
+            <span class="stats__label">Años de Experiencia</span>
+          </div>
+ 
+          <!-- ESTADÍSTICA 2 -->
+          <div class="stats__item">
+            <span class="stats__number">30</span>
+            <!-- ✏️ Cambia según el número real de habitaciones -->
+            <span class="stats__label">Habitaciones</span>
+          </div>
+ 
+          <!-- ESTADÍSTICA 3 -->
+          <div class="stats__item">
+            <span class="stats__number">5★</span>
+            <span class="stats__label">Calificación</span>
+          </div>
+ 
+          <!-- ESTADÍSTICA 4 -->
+          <div class="stats__item">
+            <span class="stats__number">+5000</span>
+            <span class="stats__label">Huéspedes Satisfechos</span>
+          </div>
+ 
+        </div>
+      </div>
+    </section>
+    <!-- FIN ESTADÍSTICAS -->
+ 
+ 
+    <!-- ============================================================
+         SECCIÓN 3: SOBRE EL HOTEL
+         Descripción general, historia, valores o propuesta de valor.
+         ============================================================ -->
+    <section class="about section section--beige" id="nosotros">
+      <div class="container">
+        <div class="about__grid">
+ 
+          <!-- Columna izquierda: IMAGEN del hotel o lobby -->
+          <div class="about__image-wrapper">
+            <!-- 
+              ✏️ REEMPLAZA el src con la foto real del hotel
+              Recomendado: foto del lobby, jardín o área principal
+            -->
+            <img
+              src="assets/images/hotel/about.jpg"
+              alt="Interior del Hotel El Rincón del Carmen"
+              class="about__image"
+              loading="lazy"
+            />
+            <!-- Badge decorativo sobre la imagen -->
+            <div class="about__badge">
+              <!-- ✏️ Puedes cambiar este texto -->
+              <span class="about__badge-number">15</span>
+              <span class="about__badge-text">Años de<br/>Hospitalidad</span>
+            </div>
+          </div>
+ 
+          <!-- Columna derecha: TEXTO sobre el hotel -->
+          <div class="about__content">
+ 
+            <span class="section-eyebrow">Sobre Nosotros</span>
+ 
+            <h2 class="section-title">
+              <!-- ✏️ ESCRIBE AQUÍ el título de esta sección -->
+              Un lugar donde el <em>confort</em> se convierte en hogar
+            </h2>
+ 
+            <hr class="divider-gold" style="margin-inline: 0;" />
+ 
+            <!-- ✏️ ESCRIBE AQUÍ la descripción del hotel (2–3 párrafos) -->
+            <p class="about__text">
+              En el Hotel El Rincón del Carmen encontrarás el equilibrio perfecto
+              entre la calidez del servicio y la elegancia de nuestras instalaciones.
+              <!-- Continúa con la descripción real del hotel aquí -->
+            </p>
+ 
+            <p class="about__text">
+              <!-- ✏️ Segundo párrafo: historia, misión o propuesta de valor -->
+            </p>
+ 
+            <!-- Lista de valores o características destacadas -->
+            <ul class="about__features">
+              <!-- ✏️ Personaliza estos ítems con los valores del hotel -->
+              <li class="about__feature-item">
+                <span class="about__feature-icon">✦</span>
+                Servicio personalizado las 24 horas
+              </li>
+              <li class="about__feature-item">
+                <span class="about__feature-icon">✦</span>
+                Gastronomía de autor en nuestro restaurante
+              </li>
+              <li class="about__feature-item">
+                <span class="about__feature-icon">✦</span>
+                Spa, zona húmeda y piscina climatizada
+              </li>
+              <li class="about__feature-item">
+                <span class="about__feature-icon">✦</span>
+                Ubicación privilegiada en el corazón de la ciudad
+              </li>
+            </ul>
+ 
+            <a href="reservas.html" class="btn btn--primary">
+              Descubre Más
+            </a>
+ 
+          </div>
+ 
+        </div>
+      </div>
+    </section>
+    <!-- FIN SOBRE EL HOTEL -->
+ 
+ 
+    <!-- ============================================================
+         SECCIÓN 4: CARRUSEL DE HABITACIONES
+         Componente Web que muestra las habitaciones disponibles.
+         Los datos vienen de: js/data/habitaciones.js
+         ============================================================ -->
+    <section class="rooms-preview section section--beige-mid" id="habitaciones">
+      <div class="container">
+ 
+        <div class="section-header">
+          <span class="section-eyebrow">Nuestras Habitaciones</span>
+          <h2 class="section-title">
+            Espacios diseñados para <em>tu descanso</em>
+          </h2>
+          <hr class="divider-gold" />
+          <p class="section-subtitle">
+            <!-- ✏️ ESCRIBE AQUÍ una descripción corta de las habitaciones -->
+            Cada habitación ha sido cuidadosamente decorada para ofrecerte
+            una experiencia única de confort y elegancia.
+          </p>
+        </div>
+ 
+        <!-- 
+          CARRUSEL DE HABITACIONES:
+          Componente Web — Archivo: js/components/carrusel/carrusel.js
+          Los datos de habitaciones se cargan desde: js/data/habitaciones.js
+        -->
+        <carrusel-habitaciones></carrusel-habitaciones>
+ 
+        <!-- Botón para ver todas las habitaciones -->
+        <div class="text-center mt-12">
+          <a href="reservas.html" class="btn btn--outline btn--lg">
+            Ver Disponibilidad Completa
+          </a>
+        </div>
+ 
+      </div>
+    </section>
+    <!-- FIN CARRUSEL HABITACIONES -->
+ 
+ 
+    <!-- ============================================================
+         SECCIÓN 5: SERVICIOS DEL HOTEL
+         Galería/grid de servicios: restaurante, spa, piscina, etc.
+         ============================================================ -->
+    <section class="services section section--beige" id="servicios">
+      <div class="container">
+ 
+        <div class="section-header">
+          <span class="section-eyebrow">Nuestros Servicios</span>
+          <h2 class="section-title">
+            Todo lo que necesitas en <em>un solo lugar</em>
+          </h2>
+          <hr class="divider-gold" />
+        </div>
+ 
+        <div class="services-grid">
+ 
+          <!-- SERVICIO 1: RESTAURANTE -->
+          <div class="service-card fade-in">
+            <div class="service-card__image-wrapper">
+              <!-- ✏️ REEMPLAZA con foto del restaurante -->
+              <img
+                src="assets/images/servicios/restaurante.jpg"
+                alt="Restaurante del hotel"
+                class="service-card__image"
+                loading="lazy"
+              />
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__icon">🍽️</div>
+              <!-- ✏️ ESCRIBE el nombre del restaurante -->
+              <h3 class="service-card__title">Restaurante</h3>
+              <!-- ✏️ ESCRIBE descripción del restaurante (1–2 líneas) -->
+              <p class="service-card__desc">
+                Gastronomía local e internacional preparada con los mejores ingredientes.
+              </p>
+            </div>
+          </div>
+ 
+          <!-- SERVICIO 2: SPA -->
+          <div class="service-card fade-in fade-in--delay-1">
+            <div class="service-card__image-wrapper">
+              <!-- ✏️ REEMPLAZA con foto del spa -->
+              <img
+                src="assets/images/servicios/spa.jpg"
+                alt="Spa del hotel"
+                class="service-card__image"
+                loading="lazy"
+              />
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__icon">💆</div>
+              <h3 class="service-card__title">Spa & Bienestar</h3>
+              <p class="service-card__desc">
+                <!-- ✏️ ESCRIBE descripción del spa -->
+                Relájate con nuestros tratamientos de relajación y bienestar.
+              </p>
+            </div>
+          </div>
+ 
+          <!-- SERVICIO 3: ZONA HÚMEDA / PISCINA -->
+          <div class="service-card fade-in fade-in--delay-2">
+            <div class="service-card__image-wrapper">
+              <!-- ✏️ REEMPLAZA con foto de la piscina o zona húmeda -->
+              <img
+                src="assets/images/servicios/piscina.jpg"
+                alt="Zona húmeda y piscina"
+                class="service-card__image"
+                loading="lazy"
+              />
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__icon">🏊</div>
+              <h3 class="service-card__title">Zona Húmeda</h3>
+              <p class="service-card__desc">
+                <!-- ✏️ ESCRIBE descripción de la zona húmeda -->
+                Piscina climatizada, jacuzzi, sauna y baño turco para tu disfrute.
+              </p>
+            </div>
+          </div>
+ 
+          <!-- SERVICIO 4: EVENTOS / SALONES -->
+          <div class="service-card fade-in fade-in--delay-3">
+            <div class="service-card__image-wrapper">
+              <!-- ✏️ REEMPLAZA con foto del salón de eventos -->
+              <img
+                src="assets/images/servicios/eventos.jpg"
+                alt="Salones de eventos"
+                class="service-card__image"
+                loading="lazy"
+              />
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__icon">🎉</div>
+              <h3 class="service-card__title">Salones de Eventos</h3>
+              <p class="service-card__desc">
+                <!-- ✏️ ESCRIBE descripción de los salones -->
+                Espacios versátiles para bodas, reuniones corporativas y celebraciones.
+              </p>
+            </div>
+          </div>
+ 
+          <!-- SERVICIO 5: GIMNASIO -->
+          <div class="service-card fade-in fade-in--delay-4">
+            <div class="service-card__image-wrapper">
+              <!-- ✏️ REEMPLAZA con foto del gimnasio -->
+              <img
+                src="assets/images/servicios/gimnasio.jpg"
+                alt="Gimnasio del hotel"
+                class="service-card__image"
+                loading="lazy"
+              />
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__icon">🏋️</div>
+              <h3 class="service-card__title">Gimnasio</h3>
+              <p class="service-card__desc">
+                <!-- ✏️ ESCRIBE descripción del gimnasio -->
+                Equipos de última generación disponibles las 24 horas del día.
+              </p>
+            </div>
+          </div>
+ 
+          <!-- SERVICIO 6: PARQUEADERO -->
+          <div class="service-card fade-in fade-in--delay-4">
+            <div class="service-card__image-wrapper">
+              <!-- ✏️ REEMPLAZA con foto del parqueadero o zona exterior -->
+              <img
+                src="assets/images/servicios/parqueadero.jpg"
+                alt="Parqueadero del hotel"
+                class="service-card__image"
+                loading="lazy"
+              />
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__icon">🚗</div>
+              <h3 class="service-card__title">Parqueadero</h3>
+              <p class="service-card__desc">
+                <!-- ✏️ ESCRIBE descripción del parqueadero -->
+                Parqueadero privado y seguro incluido para todos nuestros huéspedes.
+              </p>
+            </div>
+          </div>
+ 
+        </div>
+      </div>
+    </section>
+    <!-- FIN SERVICIOS -->
+ 
+ 
+    <!-- ============================================================
+         SECCIÓN 6: GALERÍA FOTOGRÁFICA
+         Muestra fotográfica del hotel en formato masonry/grid.
+         ============================================================ -->
+    <section class="gallery section section--white" id="galeria">
+      <div class="container">
+ 
+        <div class="section-header">
+          <span class="section-eyebrow">Galería</span>
+          <h2 class="section-title">
+            Descubre nuestros <em>espacios</em>
+          </h2>
+          <hr class="divider-gold" />
+        </div>
+ 
+        <div class="gallery__grid">
+ 
+          <!-- ✏️ REEMPLAZA cada src con las fotos reales del hotel -->
+          <!-- Foto 1 — grande (ocupa 2 columnas) -->
+          <div class="gallery__item gallery__item--large">
+            <img src="assets/images/hotel/galeria-1.jpg" alt="Área del hotel" loading="lazy" />
+            <div class="gallery__overlay">
+              <span class="gallery__label">Lobby Principal</span>
+            </div>
+          </div>
+ 
+          <!-- Foto 2 -->
+          <div class="gallery__item">
+            <img src="assets/images/hotel/galeria-2.jpg" alt="Habitación del hotel" loading="lazy" />
+            <div class="gallery__overlay">
+              <span class="gallery__label">Suite Deluxe</span>
+            </div>
+          </div>
+ 
+          <!-- Foto 3 -->
+          <div class="gallery__item">
+            <img src="assets/images/hotel/galeria-3.jpg" alt="Restaurante del hotel" loading="lazy" />
+            <div class="gallery__overlay">
+              <span class="gallery__label">Restaurante</span>
+            </div>
+          </div>
+ 
+          <!-- Foto 4 -->
+          <div class="gallery__item">
+            <img src="assets/images/hotel/galeria-4.jpg" alt="Piscina del hotel" loading="lazy" />
+            <div class="gallery__overlay">
+              <span class="gallery__label">Piscina</span>
+            </div>
+          </div>
+ 
+          <!-- Foto 5 -->
+          <div class="gallery__item">
+            <img src="assets/images/hotel/galeria-5.jpg" alt="Spa del hotel" loading="lazy" />
+            <div class="gallery__overlay">
+              <span class="gallery__label">Spa</span>
+            </div>
+          </div>
+ 
+          <!-- Foto 6 — grande (ocupa 2 filas) -->
+          <div class="gallery__item gallery__item--tall">
+            <img src="assets/images/hotel/galeria-6.jpg" alt="Jardines del hotel" loading="lazy" />
+            <div class="gallery__overlay">
+              <span class="gallery__label">Jardines</span>
+            </div>
+          </div>
+ 
+        </div>
+ 
+      </div>
+    </section>
+    <!-- FIN GALERÍA -->
+ 
+ 
+    <!-- ============================================================
+         SECCIÓN 7: TESTIMONIOS DE CLIENTES
+         Reseñas y opiniones de huéspedes anteriores.
+         ============================================================ -->
+    <section class="testimonials section section--navy" id="testimonios">
+      <div class="container">
+ 
+        <div class="section-header">
+          <span class="section-eyebrow" style="color: var(--color-brown-light);">Testimonios</span>
+          <h2 class="section-title" style="color: var(--color-white);">
+            Lo que dicen nuestros <em>huéspedes</em>
+          </h2>
+          <hr class="divider-gold" />
+        </div>
+ 
+        <div class="testimonials__grid">
+ 
+          <!-- TESTIMONIO 1 -->
+          <div class="testimonial-card">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <!-- ✏️ ESCRIBE el texto del testimonio -->
+            <p class="testimonial-card__text">
+              "Una experiencia inolvidable. El trato del personal fue excepcional
+              y las instalaciones superaron todas nuestras expectativas."
+            </p>
+            <div class="testimonial-card__author">
+              <!-- ✏️ Nombre del cliente -->
+              <span class="testimonial-card__name">María González</span>
+              <!-- ✏️ Ciudad o país de origen -->
+              <span class="testimonial-card__origin">Bogotá, Colombia</span>
+            </div>
+          </div>
+ 
+          <!-- TESTIMONIO 2 -->
+          <div class="testimonial-card">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__text">
+              <!-- ✏️ ESCRIBE el texto del segundo testimonio -->
+              "El spa y la piscina son increíbles. Definitivamente volveremos
+              en nuestra próxima visita a la ciudad."
+            </p>
+            <div class="testimonial-card__author">
+              <span class="testimonial-card__name">Carlos Méndez</span>
+              <span class="testimonial-card__origin">Medellín, Colombia</span>
+            </div>
+          </div>
+ 
+          <!-- TESTIMONIO 3 -->
+          <div class="testimonial-card">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__text">
+              <!-- ✏️ ESCRIBE el texto del tercer testimonio -->
+              "La gastronomía del restaurante es simplemente espectacular.
+              Ambiente acogedor y servicio de primera clase."
+            </p>
+            <div class="testimonial-card__author">
+              <span class="testimonial-card__name">Ana Ramírez</span>
+              <span class="testimonial-card__origin">Cúcuta, Colombia</span>
+            </div>
+          </div>
+ 
+        </div>
+ 
+      </div>
+    </section>
+    <!-- FIN TESTIMONIOS -->
+ 
+ 
+    <!-- ============================================================
+         SECCIÓN 8: BANNER CTA (Call To Action)
+         Franja de llamada a la acción para reservar.
+         ============================================================ -->
+    <section class="cta-banner section--sm">
+      <!-- 
+        IMAGEN DE FONDO DEL CTA:
+        En home.css busca `.cta-banner` y cambia:
+        background-image: url('../assets/images/hotel/cta-bg.jpg');
+      -->
+      <div class="cta-banner__overlay"></div>
+      <div class="container">
+        <div class="cta-banner__content">
+ 
+          <h2 class="cta-banner__title">
+            <!-- ✏️ ESCRIBE el título del CTA -->
+            ¿Listo para vivir una <em>experiencia única</em>?
+          </h2>
+ 
+          <p class="cta-banner__subtitle">
+            <!-- ✏️ ESCRIBE el subtítulo del CTA -->
+            Reserva hoy y disfruta de nuestras tarifas especiales.
+          </p>
+ 
+          <div class="cta-banner__actions">
+            <a href="reservas.html" class="btn btn--secondary btn--lg">
+              Reservar Ahora
+            </a>
+            <a href="contacto.html" class="btn btn--outline-white btn--lg">
+              Contáctanos
+            </a>
+          </div>
+ 
+        </div>
+      </div>
+    </section>
+    <!-- FIN CTA BANNER -->
+ 
+ 
+  </main>
+  <!-- FIN MAIN -->
+ 
+ 
+  <!-- ================================================================
+       FOOTER — Componente Web reutilizable
+       Archivo: js/components/footer/footer.js
+       ================================================================ -->
+  <footer-component></footer-component>
+ 
+ 
+  <!-- ================================================================
+       MODAL — Componente Web reutilizable (para detalles de habitación)
+       Archivo: js/components/modal/modal.js
+       ================================================================ -->
+  <modal-component></modal-component>
+ 
+ 
+  <!-- ================================================================
+       CONTENEDOR DE TOASTS / ALERTAS
+       Controlado desde: js/utils/alertas.js
+       ================================================================ -->
+  <div class="toast-container" id="toastContainer"></div>
+ 
+ 
+  <!-- ================================================================
+       SCRIPTS — Orden de carga importante
+       ================================================================ -->
+ 
+  <!-- 1. Datos mock (base de datos simulada) -->
+  <script src="database/mockData.js"></script>
+ 
+  <!-- 2. Servicios de localStorage -->
+  <script src="js/services/localStorage.service.js"></script>
+ 
+  <!-- 3. Servicio de autenticación -->
+  <script src="js/services/auth.service.js"></script>
+ 
+  <!-- 4. Utilidades -->
+  <script src="js/utils/fechas.js"></script>
+  <script src="js/utils/validaciones.js"></script>
+  <script src="js/utils/formatearPrecio.js"></script>
+  <script src="js/utils/alertas.js"></script>
+ 
+  <!-- 5. Componentes Web -->
+  <script src="js/components/navbar/navbar.js"></script>
+  <script src="js/components/footer/footer.js"></script>
+  <script src="js/components/carrusel/carrusel.js"></script>
+  <script src="js/components/modal/modal.js"></script>
+ 
+  <!-- 6. Lógica de la página -->
+  <script src="js/pages/home.js"></script>
+ 
+  <!-- 7. App principal -->
+  <script src="js/app.js"></script>
+ 
 </body>
 </html>
