@@ -6,9 +6,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-
-  /* ✏️ CAMBIA esta imagen por la foto principal del hotel */
-  background-image: url('../assets/images/hotel/hero.jpg');
+  background-image: url('../assets/images/hotel/hotel-inicio.jpg');
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -64,6 +62,7 @@
 }
 
 .hero__subtitle {
+  font-family: var(--font-accent);
   font-size: clamp(var(--fs-base), 2vw, var(--fs-lg));
   color: rgba(255, 255, 255, 0.78);
   max-width: 560px;
@@ -265,6 +264,18 @@
   background-color: var(--color-beige);
 }
 
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+.service-card {
+  opacity: 1; 
+  transform: translateY(0); 
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
 /* ── GALERÍA ─────────────────────────────────────────────────── */
 .gallery {
   background-color: var(--color-white);
@@ -364,7 +375,7 @@
   overflow: hidden;
 
   /* ✏️ CAMBIA esta imagen por una foto de ambiente del hotel */
-  background-image: url('../assets/images/hotel/cta-bg.jpg');
+  background-image: url('../assets/images/hotel/jardin.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
