@@ -93,6 +93,7 @@
   background-color: var(--color-beige);
   border: 1px solid var(--color-beige-dark);
   border-radius: var(--radius-md);
+  font-family: var(--font-body);
   font-size: var(--fs-base);
   color: var(--color-dark);
   transition:
@@ -190,7 +191,7 @@
 /* Grid de habitaciones */
 .reservas__rooms-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-6);
 }
 

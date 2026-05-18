@@ -21,11 +21,11 @@ render(habitaciones) {
                 <h3 class="carrusel__title">${h.nombre}</h3>
                 <p class="carrusel__info">🛏 ${h.camas} cama(s) · 👥 Máx. ${h.maxPersonas} personas</p>
                 <div class="carrusel__servicios">
-                    ${h.servicios.internet ? '<span class="servicio-tag">📶 Internet</span>' : ''}
-                    ${h.servicios.minibar ? '<span class="servicio-tag">🍷 Minibar</span>' : ''}
-                    ${h.servicios.jacuzzi ? '<span class="servicio-tag">🛁 Jacuzzi</span>' : ''}
-                    ${h.servicios.tv ? '<span class="servicio-tag">📺 TV</span>' : ''}
-                    ${h.servicios.aireAcondicionado ? '<span class="servicio-tag">❄️ Aire</span>' : ''}
+                    ${h.servicios.internet ? '<span class="servicio-tag">Internet</span>' : ''}
+                    ${h.servicios.minibar ? '<span class="servicio-tag">Minibar</span>' : ''}
+                    ${h.servicios.jacuzzi ? '<span class="servicio-tag">Jacuzzi</span>' : ''}
+                    ${h.servicios.tv ? '<span class="servicio-tag">TV</span>' : ''}
+                    ${h.servicios.aireAcondicionado ? '<span class="servicio-tag">Aire</span>' : ''}
                 </div>
                 <p class="carrusel__precio">
                     Desde ${FormatearPrecio.cops(h.precioPorNoche)} <span>/ noche</span>

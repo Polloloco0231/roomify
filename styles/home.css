@@ -62,7 +62,7 @@
 }
 
 .hero__subtitle {
-  font-family: var(--font-accent);
+  font-family: var(--font-body);
   font-size: clamp(var(--fs-base), 2vw, var(--fs-lg));
   color: rgba(255, 255, 255, 0.78);
   max-width: 560px;
@@ -228,6 +228,7 @@
 }
 
 .about__text {
+  font-family: var(--font-body);
   font-size: var(--fs-base);
   color: var(--color-dark-mid);
   line-height: var(--lh-relaxed);
@@ -244,6 +245,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  font-family: var(--font-body);
   font-size: var(--fs-sm);
   color: var(--color-dark-mid);
 }
@@ -416,6 +418,7 @@
 }
 
 .cta-banner__subtitle {
+  font-family: var(--font-body);
   font-size: var(--fs-lg);
   color: rgba(255,255,255,0.72);
   max-width: 480px;

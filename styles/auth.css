@@ -46,6 +46,7 @@
 }
 
 .auth__subtitle {
+  font-family: var(--font-body);
   font-size: var(--fs-base);
   color: var(--color-gray);
   line-height: var(--lh-relaxed);
@@ -75,6 +76,7 @@
 
 /* ── Texto de footer (links para cambiar página) ─────────── */
 .auth__footer-text {
+  font-family: var(--font-body);
   font-size: var(--fs-sm);
   color: var(--color-gray);
   text-align: center;

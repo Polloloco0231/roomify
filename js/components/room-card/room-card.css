@@ -55,6 +55,7 @@ color: var(--color-dark);
 }
 
 .room-card__info {
+font-family: var(--font-body);
 font-size: var(--fs-sm);
 color: var(--color-dark-mid);
 }
@@ -66,11 +67,22 @@ gap: var(--space-2);
 }
 
 .servicio-tag {
-background: var(--color-beige-mid);
-color: var(--color-dark);
-padding: var(--space-1) var(--space-2);
+background: var(--color-white);
+color: var(--color-brown-dark);
+padding: var(--space-1) var(--space-3);
 border-radius: var(--radius-full);
-font-size: var(--fs-xs);
+border: 2px solid var(--color-brown-gold);
+font-family: var(--font-accent);
+font-size: var(--fw-md);
+font-weight: var(--fw-semibold);
+text-transform: capitalize;
+transition: all var(--transition-base);
+}
+
+.servicio-tag:hover {
+background: var(--color-brown-gold);
+color: var(--color-white);
+box-shadow: var(--shadow-gold);
 }
 
 @media (max-width: 768px) {

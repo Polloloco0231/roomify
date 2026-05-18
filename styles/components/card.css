@@ -284,6 +284,7 @@
 }
 
 .service-card__desc {
+  font-family: var(--font-body);
   font-size: var(--fs-sm);
   color: var(--color-gray);
   line-height: var(--lh-relaxed);
@@ -345,6 +346,7 @@
 }
 
 .testimonial-card__origin {
+  font-family: var(--font-body);
   font-size: var(--fs-xs);
   color: rgba(255, 255, 255, 0.4);
 }

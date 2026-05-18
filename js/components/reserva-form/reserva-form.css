@@ -21,8 +21,10 @@ margin-bottom: var(--space-4);
 }
 
 .form-label {
+font-family: var(--font-accent);
 font-size: var(--fs-sm);
 font-weight: var(--fw-medium);
+text-transform: uppercase;
 color: var(--color-dark);
 }
 

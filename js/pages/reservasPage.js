@@ -68,11 +68,11 @@ renderHabitaciones(habitaciones, fechaInicio, fechaFin, noches) {
         <h3 class="room-card__title">${h.nombre}</h3>
         <p class="room-card__info">🛏 ${h.camas} cama(s) · 👥 Máx. ${h.maxPersonas} personas</p>
         <div class="room-card__servicios">
-            ${h.servicios.internet ? '<span class="servicio">📶 Internet</span>' : ''}
-            ${h.servicios.minibar ? '<span class="servicio">🍷 Minibar</span>' : ''}
-            ${h.servicios.jacuzzi ? '<span class="servicio">🛁 Jacuzzi</span>' : ''}
-            ${h.servicios.tv ? '<span class="servicio">📺 TV</span>' : ''}
-            ${h.servicios.aireAcondicionado ? '<span class="servicio">❄️ Aire</span>' : ''}
+            ${h.servicios.internet ? '<span class="servicio-tag">Internet</span>' : ''}
+            ${h.servicios.minibar ? '<span class="servicio-tag">Minibar</span>' : ''}
+            ${h.servicios.jacuzzi ? '<span class="servicio-tag">Jacuzzi</span>' : ''}
+            ${h.servicios.tv ? '<span class="servicio-tag">TV</span>' : ''}
+            ${h.servicios.aireAcondicionado ? '<span class="servicio-tag">Aire</span>' : ''}
             </div>
         <div class="room-card__precio">
             <span>${FormatearPrecio.cops(h.precioPorNoche)} / noche</span>

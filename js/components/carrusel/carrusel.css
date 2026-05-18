@@ -60,6 +60,7 @@ width: 100%;
 }
 
 .carrusel__info {
+    font-family: var(--font-body);
     font-size: var(--fs-md);
     color: var(--color-dark-mid);
 }
@@ -71,12 +72,22 @@ width: 100%;
 }
 
 .servicio-tag {
-    background: var(--color-beige-mid);
-    color: var(--color-dark);
+    background: var(--color-white);
+    color: var(--color-brown-dark);
     padding: var(--space-1) var(--space-3);
     border-radius: var(--radius-full);
-    font-size: var(--fs-sm);
-    font-family: var(--font-display);
+    border: 2px solid var(--color-brown-gold);
+    font-family: var(--font-accent);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    text-transform: capitalize;
+    transition: all var(--transition-base);
+}
+
+.servicio-tag:hover {
+    background: var(--color-brown-gold);
+    color: var(--color-white);
+    box-shadow: var(--shadow-gold);
 }
 
 .carrusel__precio {
