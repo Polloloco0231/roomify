@@ -134,11 +134,3 @@ gap: var(--space-3);
   transform: translateY(1px);
 }
 }
-
-.cuenta {
-    margin-top: 5rem;
-}
-
-.cuenta .navbar__auth {
-    visibility: hidden;
-}

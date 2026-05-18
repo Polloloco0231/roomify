@@ -5,6 +5,7 @@
   grid-template-rows: auto 1fr;
   min-height: 100vh;
   background-color: #f0ece4;
+  font-family: var(--font-body);
 }
 
 /* ── Sidebar ─────────────────────────────────────────────────── */
@@ -203,6 +204,28 @@
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
   color: var(--color-brown-light);
+}
+
+/* Botón Cerrar Sesión en footer */
+.admin-sidebar__footer .admin-sidebar__nav-item {
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-weight: var(--fw-medium);
+  transition:
+    background-color var(--overlay-hero),
+    color var(--transition-base),
+    transform var(--transition-fast),
+    box-shadow var(--transition-base);
+  box-shadow: var(--shadow-xs);
+}
+
+.admin-sidebar__footer .admin-sidebar__nav-item:hover {
+  background-color: var(--color-brown-gold);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 /* ── Header del admin ────────────────────────────────────────── */

@@ -32,7 +32,7 @@ render() {
         <div class="navbar__auth" id="navAuth">
             <a href="login.html" class="btn btn--outline" id="navLogin">Iniciar Sesión</a>
             <span class="navbar__user" id="navNombre" style="display:none"></span>
-            <a href="admin.html" class="btn btn--outline" id="navAdmin" style="display:none">Admin</a>
+            <a href="admin.html" class="btn btn--primary" id="navAdmin" style="display:none">Admin</a>
             <button class="btn btn--primary" id="navLogout" style="display:none">Cerrar Sesión</button>
         </div>
 
