@@ -1,0 +1,54 @@
+.reserva-form {
+background: var(--color-white);
+border-radius: var(--radius-xl);
+padding: var(--space-8);
+box-shadow: var(--shadow-card);
+}
+
+.reserva-form__title {
+font-family: var(--font-heading);
+font-size: var(--fs-xl);
+color: var(--color-dark);
+margin-bottom: var(--space-6);
+text-align: center;
+}
+
+.form-group {
+display: flex;
+flex-direction: column;
+gap: var(--space-2);
+margin-bottom: var(--space-4);
+}
+
+.form-label {
+font-size: var(--fs-sm);
+font-weight: var(--fw-medium);
+color: var(--color-dark);
+}
+
+.form-input {
+padding: var(--space-3) var(--space-4);
+border: 1px solid var(--color-beige-dark);
+border-radius: var(--radius-md);
+font-size: var(--fs-md);
+color: var(--color-dark);
+background: var(--color-beige-light);
+transition: border-color var(--transition-base);
+width: 100%;
+box-sizing: border-box;
+}
+
+.form-input:focus {
+outline: none;
+border-color: var(--color-brown-gold);
+}
+
+.btn--full {
+width: 100%;
+}
+
+@media (max-width: 768px) {
+.reserva-form {
+    padding: var(--space-6);
+}
+}

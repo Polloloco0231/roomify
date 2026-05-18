@@ -1,0 +1,65 @@
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: var(--z-modal);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay--active {
+display: flex;
+}
+
+.modal {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+    animation: modalEntrada var(--transition-base) ease;
+}
+
+@keyframes modalEntrada {
+from {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+.modal__close {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    background: none;
+    border: none;
+    font-size: var(--fs-lg);
+    cursor: pointer;
+    color: var(--color-dark-mid);
+    transition: color var(--transition-base);
+}
+
+.modal__close:hover {
+    color: var(--color-dark);
+}
+
+.modal__content {
+    margin-top: var(--space-4);
+}
+
+@media (max-width: 768px) {
+    .modal {
+    padding: var(--space-6);
+    width: 95%;
+}
+}
