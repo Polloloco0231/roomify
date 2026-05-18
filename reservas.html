@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Reservas — Hotel El Rincón del Carmen" />
+  <title>Reservas | Hotel El Rincón del Carmen</title>
+
+  <link rel="stylesheet" href="styles/variables.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
+  <link rel="stylesheet" href="styles/reservas.css" />
+  <link rel="stylesheet" href="styles/components/navbar.css" />
+  <link rel="stylesheet" href="styles/components/footer.css" />
+  <link rel="stylesheet" href="styles/components/card.css" />
+  <link rel="stylesheet" href="styles/components/modal.css" />
+</head>
+<body class="page-wrapper">
+
+  <navbar-component></navbar-component>
+
+  <main class="main-content">
+
+    <section class="reservas__search">
+      <div class="container">
+
+        <div class="reservas__search-header">
+          <span class="reservas__search-eyebrow">Disponibilidad</span>
+          <h1 class="reservas__search-title">
+            Encuentra tu habitación <em>ideal</em>
+          </h1>
+        </div>
+
+        <form class="reservas__filter-form" id="busquedaForm" novalidate>
+
+          <div class="reservas__filter-group">
+            <label class="reservas__filter-label" for="fechaInicio">
+              Fecha de Entrada
+            </label>
+            <input
+              type="date"
+              id="fechaInicio"
+              name="fechaInicio"
+              class="reservas__filter-input"
+              required
+            />
+          </div>
+
+          <div class="reservas__filter-group">
+            <label class="reservas__filter-label" for="fechaFin">
+              Fecha de Salida
+            </label>
+            <input
+              type="date"
+              id="fechaFin"
+              name="fechaFin"
+              class="reservas__filter-input"
+              required
+            />
+          </div>
+
+          <div class="reservas__filter-group">
+            <label class="reservas__filter-label" for="personas">
+              Número de Personas
+            </label>
+            <input
+              type="number"
+              id="personas"
+              name="personas"
+              class="reservas__filter-input"
+              placeholder="¿Cuántas personas?"
+              min="1"
+              max="10"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg reservas__filter-btn">
+             Buscar
+          </button>
+
+        </form>
+
+      </div>
+    </section>
+
+    <section class="reservas__results section">
+      <div class="container">
+
+        <div class="reservas__initial" id="estadoInicial">
+          <h2 class="reservas__initial-title">¿Cuándo nos visitas?</h2>
+          <p class="reservas__initial-text">
+            Selecciona las fechas y el número de personas para ver
+            las habitaciones disponibles.
+          </p>
+        </div>
+
+        <div class="reservas__rooms-grid" id="habitacionesContainer"></div>
+
+      </div>
+    </section>
+
+    <section class="mis-reservas section" id="misReservas" style="display:none;">
+      <div class="container">
+
+        <div class="mis-reservas__header">
+          <h2 class="mis-reservas__title">Mis Reservas</h2>
+          <span class="badge badge--featured" id="contadorReservas"></span>
+        </div>
+
+        <div class="mis-reservas__grid" id="misReservasContainer">
+          <div class="mis-reservas__empty">
+            <p class="mis-reservas__empty-text">
+              Aún no tienes reservas. ¡Haz tu primera reserva arriba!
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer-component></footer-component>
+
+  <modal-component></modal-component>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="database/mockData.js"></script>
+  <script src="js/services/localStorage.service.js"></script>
+  <script src="js/services/auth.service.js"></script>
+  <script src="js/services/habitaciones.service.js"></script>
+  <script src="js/services/reservas.service.js"></script>
+  <script src="js/utils/fechas.js"></script>
+  <script src="js/utils/validaciones.js"></script>
+  <script src="js/utils/formatearPrecio.js"></script>
+  <script src="js/utils/alertas.js"></script>
+  <script src="js/components/navbar/navbar.js"></script>
+  <script src="js/components/footer/footer.js"></script>
+  <script src="js/components/modal/modal.js"></script>
+  <script src="js/pages/reservasPage.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
