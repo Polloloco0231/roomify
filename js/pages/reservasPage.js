@@ -6,6 +6,19 @@ init() {
     this.setFechasMinimas();
     this.leerParametrosURL();
 },
+leerParametrosURL() {
+    const params = new URLSearchParams(window.location.search);
+    const fechaInicio = params.get('fechaInicio');
+    const fechaFin = params.get('fechaFin');
+    const personas = params.get('personas');
+
+    if (fechaInicio && fechaFin && personas) {
+    document.getElementById('fechaInicio').value = fechaInicio;
+    document.getElementById('fechaFin').value = fechaFin;
+    document.getElementById('personas').value = personas;
+    this.buscarDisponibilidad();
+}
+},
 
 setFechasMinimas() {
     const hoy = FechasUtils.hoyISO();
