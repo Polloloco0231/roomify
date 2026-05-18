@@ -12,7 +12,8 @@ render() {
         <div class="navbar__container">
 
         <a href="index.html" class="navbar__logo">
-            🏨 Rincón del Carmen
+            Rincón <br /> 
+            <em>del Carmen</em>
         </a>
 
         <button class="navbar__toggle" id="navToggle">

@@ -10,7 +10,7 @@ render() {
         <div class="footer__container">
 
         <div class="footer__brand">
-            <h3 class="footer__logo">🏨 Rincón del Carmen</h3>
+            <h3 class="footer__logo">Rincón del Carmen</h3>
             <p class="footer__desc">Un lugar donde el descanso y la elegancia se encuentran. Te esperamos para brindarte la mejor experiencia.</p>
         </div>
 
