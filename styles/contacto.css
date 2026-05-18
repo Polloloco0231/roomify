@@ -6,8 +6,7 @@
   align-items: flex-end;
   overflow: hidden;
 
-  /* ✏️ CAMBIA esta imagen por una foto de la fachada o recepción */
-  background-image: url('../assets/images/hotel/contacto-hero.jpg');
+  background-image: url('../assets/images/hotel/contactoo.jpg');
   background-size: cover;
   background-position: center 30%;
 }

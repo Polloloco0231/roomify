@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contacto y Ubicación — Hotel El Rincón del Carmen" />
+  <title>Contacto | Hotel El Rincón del Carmen</title>
+
+  <link rel="stylesheet" href="styles/variables.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
+  <link rel="stylesheet" href="styles/contacto.css" />
+  <link rel="stylesheet" href="styles/components/navbar.css" />
+  <link rel="stylesheet" href="styles/components/footer.css" />
+  <link rel="stylesheet" href="styles/components/modal.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+</head>
+<body class="page-wrapper">
+
+  <navbar-component></navbar-component>
+
+  <main class="main-content">
+
+    <section class="page-hero">
+      <div class="page-hero__overlay"></div>
+      <div class="page-hero__content container">
+        <span class="page-hero__eyebrow">Estamos para ti</span>
+        <h1 class="page-hero__title">
+          Contáctanos y <em>visítanos</em>
+        </h1>
+      </div>
+    </section>
+
+    <section class="contacto section section--beige">
+      <div class="container">
+        <div class="contacto__grid">
+
+          <div class="contacto__info">
+
+            <div class="contacto__cards">
+
+              <a href="tel:+573001234567" class="contacto__card">
+                <div class="contacto__card-body">
+                  <span class="contacto__card-label">Teléfono</span>
+                  <span class="contacto__card-value">+57 300 123 4567</span>
+                  <span class="contacto__card-sub">Llámanos directamente</span>
+                </div>
+              </a>
+
+              <a href="https://wa.me/573001234567" target="_blank" class="contacto__card">
+                <div class="contacto__card-body">
+                  <span class="contacto__card-label">WhatsApp</span>
+                  <span class="contacto__card-value">+57 300 123 4567</span>
+                  <span class="contacto__card-sub">Escríbenos al instante</span>
+                </div>
+              </a>
+
+              <a href="mailto:info@hotelrincondelcarmen.com" class="contacto__card">
+                <div class="contacto__card-body">
+                  <span class="contacto__card-label">Correo Electrónico</span>
+                  <span class="contacto__card-value">info@hotelrincondelcarmen.com</span>
+                  <span class="contacto__card-sub">Te respondemos en menos de 24h</span>
+                </div>
+              </a>
+
+              <div class="contacto__card">
+                <div class="contacto__card-body">
+                  <span class="contacto__card-label">Dirección</span>
+                  <span class="contacto__card-value">Calle 35 # 28-42</span>
+                  <span class="contacto__card-sub">Bucaramanga, Santander, Colombia</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="contacto__schedule">
+              <div class="contacto__schedule-title">
+                 Horario de Atención
+              </div>
+              <div class="contacto__schedule-row">
+                <span class="contacto__schedule-day">Lunes — Viernes</span>
+                <span class="contacto__schedule-time">7:00 AM — 10:00 PM</span>
+              </div>
+              <div class="contacto__schedule-row">
+                <span class="contacto__schedule-day">Sábados</span>
+                <span class="contacto__schedule-time">8:00 AM — 11:00 PM</span>
+              </div>
+              <div class="contacto__schedule-row">
+                <span class="contacto__schedule-day">Domingos y Festivos</span>
+                <span class="contacto__schedule-time">8:00 AM — 9:00 PM</span>
+              </div>
+              <div class="contacto__schedule-row">
+                <span class="contacto__schedule-day">Recepción</span>
+                <span class="contacto__schedule-time">24 horas</span>
+              </div>
+            </div>
+
+            <div class="contacto__social">
+              <span class="contacto__social-title">Síguenos en redes</span>
+              <div class="contacto__social-links">
+                <a href="#" target="_blank" class="contacto__social-link" aria-label="Facebook">📘</a>
+                <a href="#" target="_blank" class="contacto__social-link" aria-label="Instagram">📸</a>
+                <a href="#" target="_blank" class="contacto__social-link" aria-label="WhatsApp">💬</a>
+                <a href="#" target="_blank" class="contacto__social-link" aria-label="TripAdvisor">🌐</a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="contacto__form-wrapper">
+
+            <div class="contacto__form-header">
+              <h3 class="contacto__form-title">Envíanos un mensaje</h3>
+              <p class="contacto__form-subtitle">
+                Completa el formulario y nos pondremos en contacto contigo lo antes posible.
+              </p>
+            </div>
+            <form class="contacto__form" id="contactoForm" novalidate>
+
+              <div class="form-group">
+                <label class="form-label" for="nombreContacto">Nombre Completo</label>
+                <input
+                  type="text"
+                  id="nombreContacto"
+                  name="nombreContacto"
+                  class="form-input"
+                  placeholder="Tu nombre completo"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+
+              <div class="contacto__form-row">
+
+                <div class="form-group">
+                  <label class="form-label" for="emailContacto">Correo Electrónico</label>
+                  <input
+                    type="email"
+                    id="emailContacto"
+                    name="emailContacto"
+                    class="form-input"
+                    placeholder="tucorreo@ejemplo.com"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="telefonoContacto">Teléfono</label>
+                  <input
+                    type="tel"
+                    id="telefonoContacto"
+                    name="telefonoContacto"
+                    class="form-input"
+                    placeholder="Ej: 3001234567"
+                    autocomplete="tel"
+                    required
+                  />
+                </div>
+
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="mensajeContacto">Mensaje</label>
+                <textarea
+                  id="mensajeContacto"
+                  name="mensajeContacto"
+                  class="form-textarea"
+                  placeholder="¿En qué podemos ayudarte? Cuéntanos sobre tu estadía, fechas de interés, número de personas..."
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--full btn--lg">
+                 Enviar Mensaje
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="ubicacion section section--beige-mid">
+      <div class="container">
+        <div class="ubicacion__grid">
+
+          <div class="ubicacion__info">
+
+            <span class="section-eyebrow">Cómo Llegarnos</span>
+            <h2 class="section-title" style="text-align: left;">
+              Encuéntranos en el <em>corazón</em> de la ciudad
+            </h2>
+            <hr class="divider-gold" style="margin-inline: 0;" />
+
+            <div class="ubicacion__address">
+              <div class="ubicacion__address-text">
+                <strong>Hotel El Rincón del Carmen</strong>
+                Calle 35 # 28-42<br />
+                Bucaramanga, Santander<br />
+                Colombia
+              </div>
+            </div>
+
+            <div class="ubicacion__address">
+              <div class="ubicacion__address-text">
+                <strong>En carro</strong>
+                A 10 minutos del centro histórico y a 20 minutos
+                del Aeropuerto Palonegro.
+              </div>
+            </div>
+
+            <div class="ubicacion__address">
+              <div class="ubicacion__address-text">
+                <strong>En transporte público</strong>
+                Rutas de bus con parada a media cuadra del hotel.
+              </div>
+            </div>
+
+            <a
+              href="https://maps.google.com/?q=Hotel+Rincon+del+Carmen+Bucaramanga"
+              target="_blank"
+              class="ubicacion__cta-maps"
+            >
+              Ver en Google Maps →
+            </a>
+
+          </div>
+
+          <div class="ubicacion__map-wrapper">
+            <div id="mapaContainer" class="ubicacion__map-placeholder">
+              <span style="font-size: 2rem;">🗺️</span>
+              <span>Cargando mapa...</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer-component></footer-component>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="database/mockData.js"></script>
+  <script src="js/services/localStorage.service.js"></script>
+  <script src="js/services/auth.service.js"></script>
+  <script src="js/utils/validaciones.js"></script>
+  <script src="js/utils/alertas.js"></script>
+  <script src="js/utils/formatearPrecio.js"></script>
+  <script src="js/utils/fechas.js"></script>
+  <script src="js/components/navbar/navbar.js"></script>
+  <script src="js/components/footer/footer.js"></script>
+  <script src="js/pages/contactoPage.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
