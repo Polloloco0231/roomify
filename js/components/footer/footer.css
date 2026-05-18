@@ -4,6 +4,11 @@
     margin-top: var(--space-16);
 }
 
+.footer__brand {
+    font-family: var(--font-heading);
+    color: var(--color-white);
+}
+
 .footer__container {
     max-width: var(--container-xl);
     margin: 0 auto;
