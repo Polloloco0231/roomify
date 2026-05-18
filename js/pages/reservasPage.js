@@ -4,6 +4,7 @@ init() {
     AuthService.init();
     this.bindEvents();
     this.setFechasMinimas();
+    this.leerParametrosURL();
 },
 
 setFechasMinimas() {
