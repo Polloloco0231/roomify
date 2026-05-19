@@ -303,6 +303,16 @@
   line-height: var(--lh-relaxed);
 }
 
+/* Botón de cancelar reserva  */
+.btn--danger{
+  background-color:#dc2626;
+  color:white;
+}
+
+.btn--danger:hover{
+  background-color:#b91c1c;
+}
+
 /* ── Formulario de reserva en modal ──────────────────────────── */
 .reserva-form {
   display: flex;

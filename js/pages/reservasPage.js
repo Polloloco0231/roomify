@@ -5,6 +5,7 @@ init() {
     this.bindEvents();
     this.setFechasMinimas();
     this.leerParametrosURL();
+    this.mostrarMisReservas();
 },
 leerParametrosURL() {
     const params = new URLSearchParams(window.location.search);
@@ -123,9 +124,85 @@ reservar(habitacionId, fechaInicio, fechaFin, noches) {
     }
 
     Alertas.exito(resultado.mensaje);
+    this.mostrarMisReservas();
     setTimeout(() => this.buscarDisponibilidad(), 1500);
-}
+},
 
+mostrarMisReservas() {
+    const sesion = AuthService.getSesion();
+
+    if (!sesion) return;
+
+    const reservas = ReservasService.getByUsuario(sesion.id);
+
+    const section = document.getElementById('misReservas');
+    const container = document.getElementById('misReservasContainer');
+    const contador = document.getElementById('contadorReservas');
+
+    section.style.display = 'block';
+
+    contador.textContent = `${reservas.length} reserva(s)`;
+
+    if (reservas.length === 0) {
+        container.innerHTML = `
+            <div class="mis-reservas__empty">
+                <p class="mis-reservas__empty-text">
+                    Aún no tienes reservas.
+                </p>
+            </div>
+        `;
+        return;
+    }
+
+    container.innerHTML = reservas.map(r => `
+        <div class="room-card">
+            <div class="room-card__body">
+                <h3 class="room-card__title">${r.habitacionNombre}</h3>
+
+                <p><strong>Entrada:</strong> ${r.fechaInicio}</p>
+                <p><strong>Salida:</strong> ${r.fechaFin}</p>
+                <p><strong>Personas:</strong> ${r.personas}</p>
+                <p><strong>Noches:</strong> ${r.noches}</p>
+                <p><strong>Total:</strong> ${FormatearPrecio.cops(r.total)}</p>
+
+                <p>
+                    <strong>Estado:</strong> 
+                    ${r.estado}
+                </p>
+
+                <button 
+                    class="btn btn--danger"
+                    onclick="ReservasPage.eliminarReserva('${r.id}')"
+                >
+                    Cancelar Reserva
+                </button>
+            </div>
+        </div>
+    `).join('');
+},
+
+eliminarReserva(idReserva) {
+
+    const confirmar = confirm(
+        '¿Seguro que deseas cancelar esta reserva?'
+    );
+
+    if (!confirmar) return;
+
+    const reservas = Storage.get(STORAGE_KEYS.RESERVAS) || [];
+
+    const nuevasReservas = reservas.filter(
+        r => r.id !== idReserva
+    );
+
+    Storage.set(STORAGE_KEYS.RESERVAS, nuevasReservas);
+
+    Alertas.exito('Reserva cancelada correctamente');
+
+    this.mostrarMisReservas();
+
+    this.buscarDisponibilidad();
+}
 };
 
 document.addEventListener('DOMContentLoaded', () => ReservasPage.init());
