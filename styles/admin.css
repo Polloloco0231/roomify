@@ -285,6 +285,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  font-size: var(--fs-sm);
 }
 
 /* ── Área de contenido principal ─────────────────────────────── */
@@ -705,5 +706,82 @@
 
   .admin-amenities-grid {
     grid-template-columns: 1fr;
+  }
+}
+/* ── Fix adicional responsive admin ────────────────────────── */
+@media (max-width: 1023px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .admin-layout {
+    grid-template-columns: 1fr;
+    overflow-x: hidden;
+  }
+
+  /* El wrapper interno del contenido también debe ocupar todo el ancho */
+  .admin-layout > div {
+    min-width: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .admin-header {
+    position: sticky;
+    top: 0;
+    z-index: calc(var(--z-sticky) - 1);
+  }
+}
+
+@media (max-width: 767px) {
+  /* Tablas: scroll horizontal dentro del wrapper */
+  .admin-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+
+  /* Stats en una sola columna en pantallas muy pequeñas */
+  .admin-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Formulario de habitaciones */
+  .admin-room-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Header del panel */
+  .admin-panel__header {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  /* Breadcrumb no overflow */
+  .admin-header__breadcrumb {
+    font-size: var(--fs-sm);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-content {
+    padding: var(--space-3);
+  }
+
+  .admin-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-page-header .btn {
+    width: 100%;
   }
 }

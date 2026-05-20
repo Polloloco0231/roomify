@@ -470,10 +470,14 @@
 @media (max-width: 767px) {
   .hero {
     background-attachment: scroll;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .cta-banner {
     background-attachment: scroll;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .hero__actions {
@@ -551,5 +555,17 @@
 
   .about__badge-number {
     font-size: var(--fs-2xl);
+  }
+}
+/* ── Fix overflow móvil en stats ───────────────────────────── */
+@media (max-width: 480px) {
+  .stats__label {
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+    word-break: break-word;
+    hyphens: auto;
+  }
+  .stats__number {
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
   }
 }

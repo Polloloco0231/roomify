@@ -16,7 +16,7 @@ render() {
             <em>del Carmen</em>
         </a>
 
-        <button class="navbar__toggle" id="navToggle">
+        <button class="navbar__toggle" id="navToggle" aria-label="Abrir menú">
             <span></span>
             <span></span>
             <span></span>
@@ -27,6 +27,12 @@ render() {
             <li><a href="index.html#habitaciones" class="navbar__link">Habitaciones</a></li>
             <li><a href="reservas.html" class="navbar__link">Reservas</a></li>
             <li><a href="contacto.html" class="navbar__link">Contacto</a></li>
+            <li class="navbar__menu-auth" id="navMenuAuth">
+                <a href="login.html" class="navbar__link navbar__link--auth" id="navMenuLogin">Iniciar Sesión</a>
+                <span class="navbar__user navbar__link--auth" id="navMenuNombre" style="display:none"></span>
+                <a href="admin.html" class="navbar__link navbar__link--auth" id="navMenuAdmin" style="display:none">Panel Admin</a>
+                <button class="navbar__link navbar__link--auth navbar__link--logout" id="navMenuLogout" style="display:none">Cerrar Sesión</button>
+            </li>
         </ul>
 
         <div class="navbar__auth" id="navAuth">
@@ -54,28 +60,57 @@ initMenu() {
 
 actualizarSesion() {
     const sesion = LocalStorageService.get('sesion');
+
+    // Desktop auth
     const btnLogin = this.querySelector('#navLogin');
     const btnAdmin = this.querySelector('#navAdmin');
     const btnLogout = this.querySelector('#navLogout');
     const nombreUsuario = this.querySelector('#navNombre');
 
+    // Mobile auth (inside menu)
+    const btnMenuLogin = this.querySelector('#navMenuLogin');
+    const btnMenuAdmin = this.querySelector('#navMenuAdmin');
+    const btnMenuLogout = this.querySelector('#navMenuLogout');
+    const nombreMenuUsuario = this.querySelector('#navMenuNombre');
+
     if (sesion) {
+        // Desktop: hide login, show user name, logout, and admin if applicable
         if (btnLogin) btnLogin.style.display = 'none';
         if (nombreUsuario) {
-        nombreUsuario.style.display = 'block';
-        nombreUsuario.textContent = '👤 ' + sesion.nombre;
-    }
-    if (btnLogout) btnLogout.style.display = 'block';
-    if (btnAdmin && sesion.rol === 'admin') {
-        btnAdmin.style.display = 'block';
-    }
-}
+            nombreUsuario.style.display = 'block';
+            nombreUsuario.textContent = '👤 ' + sesion.nombre;
+        }
+        if (btnLogout) btnLogout.style.display = 'block';
+        if (btnAdmin && sesion.rol === 'admin') {
+            btnAdmin.style.display = 'block';
+        }
 
+        // Mobile: same logic
+        if (btnMenuLogin) btnMenuLogin.style.display = 'none';
+        if (nombreMenuUsuario) {
+            nombreMenuUsuario.style.display = 'block';
+            nombreMenuUsuario.textContent = '👤 ' + sesion.nombre;
+        }
+        if (btnMenuLogout) btnMenuLogout.style.display = 'block';
+        if (btnMenuAdmin && sesion.rol === 'admin') {
+            btnMenuAdmin.style.display = 'block';
+        }
+    }
+
+    // Desktop logout
     if (btnLogout) {
-    btnLogout.addEventListener('click', () => {
-        LocalStorageService.remove('sesion');
-        window.location.href = 'index.html';
-    });
+        btnLogout.addEventListener('click', () => {
+            LocalStorageService.remove('sesion');
+            window.location.href = 'index.html';
+        });
+    }
+
+    // Mobile logout
+    if (btnMenuLogout) {
+        btnMenuLogout.addEventListener('click', () => {
+            LocalStorageService.remove('sesion');
+            window.location.href = 'index.html';
+        });
     }
 }
 
