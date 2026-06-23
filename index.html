@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Rincòn del Carmen</title>
+    <link rel="stylesheet" href="styles/variables.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+    
+    <link rel="stylesheet" href="styles/components/navbar.css">
+    <link rel="stylesheet" href="styles/components/footer.css" />
+    <link rel="stylesheet" href="styles/components/card.css" />
+    <link rel="stylesheet" href="styles/components/modal.css" />
+
+    <link rel="stylesheet" href="js/components/carrusel/carrusel.css" />
+    <link rel="stylesheet" href="js/components/footer/footer.css">
+    <link rel="stylesheet" href="js/components/navbar/navbar.css">
+    <link rel="stylesheet" href="js/components/modal/modal.css">
+    <link rel="stylesheet" href="js/components/room-card/room-card.css">
+    <link rel="stylesheet" href="js/components/reserva-form/reserva-form.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="page-wrapper">
+  <navbar-component></navbar-component>
+
+  <main class="main-content">
+    <section class="hero" id="inicio">
+
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content container">
+        <span class="hero__eyebrow">
+          Bienvenidos al
+        </span>
+
+        <h1 class="hero__title">
+          Hotel El Rincón<br />
+          <em>del Carmen</em>
+        </h1>
+
+        <p class="hero__subtitle">
+          un espacio diseñado para brindar comodidad, tranquilidad y una experiencia inolvidable a cada visitante. Ubicado en un entorno acogedor y estratégico, nuestro hotel combina elegancia, descanso y atención personalizada para que cada estadía se sienta como en casa.
+        </p>
+
+        <div class="hero__actions">
+          <a href="reservas.html" class="btn btn--secondary btn--lg">
+            Reservar Ahora
+          </a>
+          <a href="#habitaciones" class="btn btn--outline-white btn--lg">
+            Ver Habitaciones
+          </a>
+        </div>
+
+      </div>
+
+      <div class="hero__scroll-indicator">
+        <span></span>
+      </div>
+ 
+    </section>
+ 
+    <section class="stats section--sm section--white">
+      <div class="container">
+        <div class="stats__grid">
+ 
+          <div class="stats__item">
+            <span class="stats__number">15</span>
+            <span class="stats__label">Años de Experiencia</span>
+          </div>
+ 
+          <div class="stats__item">
+            <span class="stats__number">5</span>
+            <span class="stats__label">Habitaciones</span>
+          </div>
+ 
+          <div class="stats__item">
+            <span class="stats__number">4.5★</span>
+            <span class="stats__label">Calificación</span>
+          </div>
+ 
+          <div class="stats__item">
+            <span class="stats__number">+5000</span>
+            <span class="stats__label">Huéspedes Satisfechos</span>
+          </div>
+ 
+        </div>
+      </div>
+    </section>
+ 
+    <section class="about section section--beige" id="nosotros">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__image-wrapper">
+            <img
+              src="assets/images/hotel/lobyy.jpg"
+              alt="Interior del Hotel El Rincón del Carmen"
+              class="about__image"
+              loading="lazy"
+            />
+            <div class="about__badge">
+              <span class="about__badge-number">15</span>
+              <span class="about__badge-text">Años de<br/>Hospitalidad</span>
+            </div>
+          </div>
+          <div class="about__content">
+
+            <span class="section-eyebrow">Sobre Nosotros</span>
+ 
+            <h2 class="section-title">
+              Un lugar donde el <em>confort</em> se convierte en hogar
+            </h2>
+ 
+            <hr class="divider-gold" style="margin-inline: 0;" />
+ 
+            <p class="about__text">
+              Bienvenido a Hotel Rincón del Carmen, un espacio diseñado para brindar comodidad, tranquilidad y una experiencia inolvidable a cada visitante. Ubicado en un entorno acogedor y estratégico, nuestro hotel combina elegancia, descanso y atención personalizada para que cada estadía se sienta como en casa.
+            </p>
+
+            <p class="about__text">
+              Contamos con habitaciones modernas y confortables, zonas de descanso, servicio de restaurante, conexión Wi-Fi, áreas húmedas y espacios ideales para disfrutar en pareja, familia o viajes de negocios. En Hotel Rincón del Carmen nos enfocamos en ofrecer un ambiente cálido, seguro y relajante, pensado para quienes buscan comodidad y una excelente atención.
+            </p>
+ 
+            <ul class="about__features">
+              <li class="about__feature-item">
+                <span class="about__feature-icon">✦</span>
+                Servicio personalizado las 24 horas
+              </li>
+              <li class="about__feature-item">
+                <span class="about__feature-icon">✦</span>
+                Gastronomía de autor en nuestro restaurante
+              </li>
+              <li class="about__feature-item">
+                <span class="about__feature-icon">✦</span>
+                Spa, zona húmeda y piscina climatizada
+              </li>
+              <li class="about__feature-item">
+                <span class="about__feature-icon">✦</span>
+                Ubicación privilegiada en el corazón de la ciudad
+              </li>
+            </ul>
+ 
+            <a href="reservas.html" class="btn btn--primary">
+              Descubre Más
+            </a>
+ 
+          </div>
+ 
+        </div>
+      </div>
+    </section>
+ 
+    <section class="rooms-preview section section--beige-mid" id="habitaciones">
+      <div class="container">
+ 
+        <div class="section-header">
+          <span class="section-eyebrow">Nuestras Habitaciones</span>
+          <h2 class="section-title">
+            Espacios diseñados para <em>tu descanso</em>
+          </h2>
+          <hr class="divider-gold" />
+          <p class="section-subtitle">
+            Nuestras habitaciones están diseñadas para ofrecer una experiencia de descanso, comodidad y tranquilidad en cada estadía. Cada espacio combina un ambiente moderno y acogedor con servicios de alta calidad, brindando a nuestros huéspedes el equilibrio perfecto entre confort y elegancia.
+          </p>
+        </div>
+ 
+        <carrusel-habitaciones></carrusel-habitaciones>
+        <div class="text-center mt-12">
+          <a href="reservas.html" class="btn btn--outline btn--lg">
+            Ver Disponibilidad Completa
+          </a>
+        </div>
+ 
+      </div>
+    </section> 
+    
+    <section class="services section section--beige" id="servicios">
+      <div class="container">
+ 
+        <div class="section-header">
+          <span class="section-eyebrow">Nuestros Servicios</span>
+          <h2 class="section-title">
+            Todo lo que necesitas en <em>un solo lugar</em>
+          </h2>
+          <hr class="divider-gold" />
+        </div>
+ 
+        <div class="services-grid">
+ 
+          <div class="service-card fade-in">
+            <div class="service-card__image-wrapper">
+              <img
+                src="assets/images/servicios/restaurante.jpg"
+                alt="Restaurante del hotel"
+                class="service-card__image"
+                loading="lazy"
+              />
+            </div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Restaurante</h3>
+              <p class="service-card__desc">
+                Disfruta de cocina local e internacional elaborada con ingredientes frescos y de alta calidad.             
+              </p>
+            </div>
+          </div>
+ 
+          <div class="service-card fade-in fade-in--delay-1">
+            <div class="service-card__image-wrapper">
+              <img
+                src="assets/images/servicios/spa.jpg"
+                alt="Spa del hotel"
+                class="service-card__image"
+                loading="lazy"
+              />
+            </div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Spa & Bienestar</h3>
+              <p class="service-card__desc">
+                Relájate con experiencias de bienestar, masajes y tratamientos diseñados para renovar cuerpo y mente.
+              </p>
+            </div>
+          </div>
+ 
+          <div class="service-card fade-in fade-in--delay-2">
+            <div class="service-card__image-wrapper">
+              <img
+                src="assets/images/servicios/piscina.jpg"
+                alt="Zona húmeda y piscina"
+                class="service-card__image"
+                loading="lazy"
+              />
+            </div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Zona Húmeda</h3>
+              <p class="service-card__desc">
+                Piscina climatizada, jacuzzi, sauna y baño turco para disfrutar de una experiencia completa.
+              </p>
+            </div>
+          </div>
+ 
+          <div class="service-card fade-in fade-in--delay-3">
+            <div class="service-card__image-wrapper">
+              <img
+                src="assets/images/servicios/eventos.jpg"
+                alt="Salones de eventos"
+                class="service-card__image"
+                loading="lazy"
+              />
+            </div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Salones de Eventos</h3>
+              <p class="service-card__desc">
+                Ideal para bodas, reuniones, eventos corporativos y momentos especiales.
+              </p>
+            </div>
+          </div>
+ 
+          <div class="service-card fade-in fade-in--delay-4">
+            <div class="service-card__image-wrapper">
+              <img
+                src="assets/images/servicios/actividades.jpg"
+                alt="Gimnasio del hotel"
+                class="service-card__image"
+                loading="lazy"
+              />
+            </div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Actividades</h3>
+              <p class="service-card__desc">
+                Vive experiencias únicas con actividades recreativas y planes para toda la familia.
+              </p>
+            </div>
+          </div>
+ 
+          <div class="service-card fade-in fade-in--delay-4">
+            <div class="service-card__image-wrapper">
+              <img
+                src="assets/images/servicios/parqueadero.jpg"
+                alt="Parqueadero del hotel"
+                class="service-card__image"
+                loading="lazy"
+              />
+            </div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">Parqueadero</h3>
+              <p class="service-card__desc">
+                Parqueadero privado disponible para todos nuestros huéspedes.
+              </p>
+            </div>
+          </div>
+ 
+        </div>
+      </div>
+    </section>
+    
+    <section class="gallery section section--white" id="galeria">
+      <div class="container">
+ 
+        <div class="section-header">
+          <span class="section-eyebrow">Galería</span>
+          <h2 class="section-title">
+            Descubre nuestros <em>espacios</em>
+          </h2>
+          <hr class="divider-gold" />
+        </div>
+ 
+        <div class="gallery__grid">
+          <div class="gallery__item gallery__item--large">
+            <img src="assets/images/hotel/lobyy.jpg" alt="Área del hotel" loading="lazy" />
+            <div class="gallery__overlay">
+              <span class="gallery__label">Lobby Principal</span>
+            </div>
+          </div>
+ 
+          <div class="gallery__item">
+            <img src="assets/images/habitaciones/habitacion3-pers2.jpg" alt="Habitación del hotel" loading="lazy" />
+            <div class="gallery__overlay">
+              <span class="gallery__label">Suite Deluxe</span>
+            </div>
+          </div>
+ 
+          <div class="gallery__item">
+            <img src="assets/images/servicios/restaurante.jpg" alt="Restaurante del hotel" loading="lazy" />
+            <div class="gallery__overlay">
+              <span class="gallery__label">Restaurante</span>
+            </div>
+          </div>
+ 
+          <div class="gallery__item">
+            <img src="assets/images/servicios/piscina.jpg" alt="Piscina del hotel" loading="lazy" />
+            <div class="gallery__overlay">
+              <span class="gallery__label">Piscina</span>
+            </div>
+          </div>
+ 
+          <div class="gallery__item">
+            <img src="assets/images/servicios/spa.jpg" alt="Spa del hotel" loading="lazy" />
+            <div class="gallery__overlay">
+              <span class="gallery__label">Spa</span>
+            </div>
+          </div>
+ 
+          <div class="gallery__item gallery__item--tall">
+            <img src="assets/images/hotel/jardin.jpg" alt="Jardines del hotel" loading="lazy" />
+            <div class="gallery__overlay">
+              <span class="gallery__label">Jardines</span>
+            </div>
+          </div>
+ 
+        </div>
+ 
+      </div>
+    </section>
+    
+    <section class="testimonials section section--navy" id="testimonios">
+      <div class="container">
+ 
+        <div class="section-header">
+          <span class="section-eyebrow" style="color: var(--color-brown-light);">Testimonios</span>
+          <h2 class="section-title" style="color: var(--color-white);">
+            Lo que dicen nuestros <em>huéspedes</em>
+          </h2>
+          <hr class="divider-gold" />
+        </div>
+ 
+        <div class="testimonials__grid">
+ 
+          <div class="testimonial-card">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__text">
+              "Casa muy cómoda, bonita, patio precioso y con unas vistas espectaculares, nos faltó probar la piscina y el jacuzzi, volveremos"
+            </p>
+            <div class="testimonial-card__author">
+              <span class="testimonial-card__name">María González</span>
+              <span class="testimonial-card__origin">Bogotá, Colombia</span>
+            </div>
+          </div>
+ 
+          <div class="testimonial-card">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__text">
+              "Comodidad del alojamiento, trato de los anfitriones un 10, todo cuidado al detalle y superlimpio. El entorno tambien perfecto, ideal para hacer rutas por pinares y olivos desde la casa. El extra lo ponen Nala, Balú y Morado, 3 perros super cariñosos!! Gracias Carmen por hacernos sentir como en casa!!"
+            </p>
+            <div class="testimonial-card__author">
+              <span class="testimonial-card__name">Carlos Méndez</span>
+              <span class="testimonial-card__origin">Medellín, Colombia</span>
+            </div>
+          </div>
+ 
+          <div class="testimonial-card">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__text">
+              "Amabilidad y cordialidad de Carmen y su hija, limpieza y equipamiento de la casa en perfecto estado.
+              El entorno es perfecto para desconectar y pasear. Totalmente recomendable. Gracias por el esfuerzo que poneis en hacer agradable la estancia."
+            </p>
+            <div class="testimonial-card__author">
+              <span class="testimonial-card__name">Ana Ramírez</span>
+              <span class="testimonial-card__origin">Cúcuta, Colombia</span>
+            </div>
+          </div>
+ 
+        </div>
+ 
+      </div>
+    </section>
+    
+    <section class="cta-banner section--sm">
+      <div class="cta-banner__overlay"></div>
+      <div class="container">
+        <div class="cta-banner__content">
+ 
+          <h2 class="cta-banner__title">
+            ¿Listo para vivir una <em>experiencia única</em>?
+          </h2>
+ 
+          <p class="cta-banner__subtitle">
+            Reserva hoy y disfruta de nuestras tarifas especiales.
+          </p>
+ 
+          <div class="cta-banner__actions">
+            <a href="reservas.html" class="btn btn--secondary btn--lg">
+              Reservar Ahora
+            </a>
+            <a href="contacto.html" class="btn btn--outline-white btn--lg">
+              Contáctanos
+            </a>
+          </div>
+ 
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer-component></footer-component>
+ 
+  <modal-component></modal-component>
+ 
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="database/mockData.js"></script>
+  <script src="js/services/localStorage.service.js"></script>
+  <script src="js/services/auth.service.js"></script>
+  <script src="js/services/habitaciones.service.js"></script>
+  <script src="js/services/reservas.service.js"></script>
+  <script src="js/utils/fechas.js"></script>
+  <script src="js/utils/validaciones.js"></script>
+  <script src="js/utils/formatearPrecio.js"></script>
+  <script src="js/utils/alertas.js"></script>
+  <script src="js/components/navbar/navbar.js"></script>
+  <script src="js/components/footer/footer.js"></script>
+  <script src="js/components/carrusel/carrusel.js"></script>
+  <script src="js/components/modal/modal.js"></script>
+  <script src="js/pages/home.js"></script>
+  <script src="js/app.js"></script>
+ 
+</body>
+</html>

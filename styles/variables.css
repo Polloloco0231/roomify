@@ -1,0 +1,159 @@
+:root {
+
+  /* ── Paleta principal ─────────────────────────────────────── */
+--color-navy:       #859877;  /* Verde salvia principal — navbar, hero */
+--color-navy-deep:  #6f8164;  /* Verde oliva oscuro — hover navbar */
+--color-navy-light: #a4b296;  /* Verde suave — fondos de sección */
+
+--color-brown-gold: #e69745;  /* Terracota cálido — CTAs, botones */
+--color-brown-light:#f0b06d;  /* Naranja suave — hover botones */
+--color-brown-mid:  #c97b36;  /* Terracota medio — subtítulos */
+--color-brown-dark: #7a4b24;  /* Café cálido — textos decorativos */
+
+--color-beige:      #ffecca;  /* Beige crema — fondo principal */
+--color-beige-mid:  #f2dcc0;  /* Beige medio — secciones alternas */
+--color-beige-dark: #d8c0a5;  /* Beige oscuro — bordes suaves */
+
+--color-black:      #2d241c;  /* Café oscuro elegante — títulos */
+--color-dark:       #4b3d31;  /* Marrón profundo — textos principales */
+--color-dark-mid:   #6b5b4f;  /* Café grisáceo — textos secundarios */
+--color-gray:       #9c8f82;  /* Gris cálido — placeholders */
+--color-gray-light: #d9cec2;  /* Gris claro cálido — líneas y bordes */
+
+--color-white:      #fffaf3;  /* Blanco cálido — cards */
+--color-white-soft: #fdf6ec;  /* Crema muy claro — formularios */
+
+--color-success:    #5f8a55;  /* Verde natural — confirmaciones */
+--color-warning:    #d98b3a;  /* Ámbar cálido — alertas */
+--color-error:      #b8544f;  /* Rojo terracota — errores */
+--color-info:       #7d9c8b;  /* Verde grisáceo — notificaciones */
+
+  /* ── Overlays & transparencias ───────────────────────────── */
+  --overlay-hero:        rgba(10, 16, 35, 0.58);
+  --overlay-card:        rgba(37, 98, 39, 0.72);
+  --overlay-dark:        rgba(0, 0, 0, 0.45);
+  --overlay-brown:       rgba(139, 105, 20, 0.12);
+
+  /* ── Tipografía ───────────────────────────────────────────── */
+  --font-display:        'Cormorant Garamond', 'Georgia', serif;
+  --font-heading:        'Playfair Display', 'Times New Roman', serif;
+  --font-body:           'Lato', 'Helvetica Neue', sans-serif;
+  --font-accent:         'Cormorant SC', serif;
+  --font-mono:           'Courier New', monospace;
+
+  /* Escala tipográfica fluida */
+  --fs-xs:    1.5rem;    
+  --fs-sm:    0.875rem;   
+  --fs-base:  1rem;      
+  --fs-md:    1.125rem;   
+  --fs-lg:    1.25rem;   
+  --fs-xl:    1.5rem;     
+  --fs-2xl:   1.875rem;   
+  --fs-3xl:   2.25rem;   
+  --fs-4xl:   3rem;      
+  --fs-5xl:   3.75rem;    
+  --fs-6xl:   4.5rem;    
+
+  /* Pesos */
+  --fw-light:    300;
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-black:    900;
+
+  /* Interlineado */
+  --lh-tight:   1.2;
+  --lh-snug:    1.375;
+  --lh-normal:  1.5;
+  --lh-relaxed: 1.75;
+  --lh-loose:   2;
+
+  /* Espaciado entre letras */
+  --ls-tight:   -0.02em;
+  --ls-normal:   0;
+  --ls-wide:     0.05em;
+  --ls-wider:    0.1em;
+  --ls-widest:   0.2em;
+
+  /* ── Espaciado ────────────────────────────────────────────── */
+  --space-1:    0.25rem;  
+  --space-2:    0.5rem;    
+  --space-3:    0.75rem;   
+  --space-4:    1rem;      
+  --space-5:    1.25rem;   
+  --space-6:    1.5rem;    
+  --space-8:    2rem;      
+  --space-10:   2.5rem;   
+  --space-12:   3rem;      
+  --space-16:   4rem;      
+  --space-20:   5rem;      
+  --space-24:   6rem;      
+  --space-32:   8rem;      
+
+  /* ── Bordes & radios ──────────────────────────────────────── */
+  --radius-none:   0;
+  --radius-sm:     4px;
+  --radius-md:     8px;
+  --radius-lg:     12px;
+  --radius-xl:     20px;
+  --radius-2xl:    32px;
+  --radius-full:   9999px;
+
+  --border-thin:   1px solid var(--color-beige-dark);
+  --border-mid:    1px solid var(--color-brown-light);
+  --border-accent: 2px solid var(--color-brown-gold);
+  --border-navy:   1px solid var(--color-navy);
+
+  /* ── Sombras ──────────────────────────────────────────────── */
+  --shadow-xs:   0 1px 3px rgba(0,0,0,0.08);
+  --shadow-sm:   0 2px 8px rgba(0,0,0,0.10);
+  --shadow-md:   0 4px 16px rgba(0,0,0,0.14);
+  --shadow-lg:   0 8px 32px rgba(0,0,0,0.18);
+  --shadow-xl:   0 16px 48px rgba(0,0,0,0.22);
+  --shadow-card: 0 4px 24px rgba(26, 39, 68, 0.12);
+  --shadow-navy: 0 4px 20px rgba(26, 39, 68, 0.30);
+  --shadow-gold: 0 4px 20px rgba(139, 105, 20, 0.25);
+
+  /* ── Transiciones ─────────────────────────────────────────── */
+  --transition-fast:   150ms ease;
+  --transition-base:   250ms ease;
+  --transition-slow:   400ms ease;
+  --transition-slower: 600ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Easing custom */
+  --ease-in-out-circ: cubic-bezier(0.85, 0, 0.15, 1);
+  --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-bounce:      cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Layout & contenedores ────────────────────────────────── */
+  --container-xs:   480px;
+  --container-sm:   640px;
+  --container-md:   768px;
+  --container-lg:   1024px;
+  --container-xl:   1280px;
+  --container-2xl:  1440px;
+
+  --navbar-height:       70px;
+  --navbar-height-scroll: 60px;
+  --footer-height:       auto;
+
+  /* ── Z-index ──────────────────────────────────────────────── */
+  --z-below:    -1;
+  --z-base:      0;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+  --z-tooltip:  600;
+
+  /* ── Decorativos ──────────────────────────────────────────── */
+  --divider-gold: linear-gradient(90deg, transparent, var(--color-brown-gold), transparent);
+  --gradient-hero: linear-gradient(160deg, var(--color-navy-deep) 0%, var(--color-navy) 60%, var(--color-brown-dark) 100%);
+  --gradient-card: linear-gradient(180deg, transparent 40%, var(--overlay-card) 100%);
+  --gradient-beige: linear-gradient(180deg, var(--color-beige) 0%, var(--color-beige-mid) 100%);
+  --gradient-navy: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-deep) 100%);
+  --gradient-gold: linear-gradient(90deg, var(--color-brown-gold), var(--color-brown-light));
+}

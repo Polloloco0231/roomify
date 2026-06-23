@@ -1,0 +1,427 @@
+/* ── Overlay del modal ───────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 16, 35, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--transition-slow) var(--ease-out-expo),
+    visibility var(--transition-slow);
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ── Contenedor del modal ────────────────────────────────────── */
+.modal {
+  background-color: var(--color-white);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateY(24px) scale(0.97);
+  transition:
+    transform var(--transition-slow) var(--ease-out-expo),
+    opacity var(--transition-slow);
+  opacity: 0;
+  position: relative;
+}
+
+.modal-overlay.open .modal {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Modal tamaños */
+.modal--sm  { max-width: 440px; }
+.modal--lg  { max-width: 860px; }
+.modal--xl  { max-width: 1060px; }
+.modal--full {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 0;
+  margin: 0;
+}
+
+/* ── Header del modal ────────────────────────────────────────── */
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-6) var(--space-8);
+  border-bottom: var(--border-thin);
+  flex-shrink: 0;
+  background-color: var(--color-white);
+}
+
+.modal__header-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.modal__eyebrow {
+  font-family: var(--font-accent);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--color-brown-gold);
+}
+
+.modal__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-dark);
+  line-height: var(--lh-snug);
+}
+
+.modal__close {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-beige);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-lg);
+  color: var(--color-dark-mid);
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.modal__close:hover {
+  background-color: var(--color-beige-dark);
+  color: var(--color-dark);
+  transform: rotate(90deg);
+}
+
+/* ── Cuerpo del modal ────────────────────────────────────────── */
+.modal__body {
+  padding: var(--space-8);
+  overflow-y: auto;
+  flex: 1;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Scrollbar del modal */
+.modal__body::-webkit-scrollbar {
+  width: 4px;
+}
+.modal__body::-webkit-scrollbar-track {
+  background: var(--color-beige);
+}
+.modal__body::-webkit-scrollbar-thumb {
+  background: var(--color-beige-dark);
+  border-radius: var(--radius-full);
+}
+
+/* ── Footer / acciones del modal ─────────────────────────────── */
+.modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-8);
+  border-top: var(--border-thin);
+  background-color: var(--color-beige);
+  flex-shrink: 0;
+}
+
+.modal__footer--between {
+  justify-content: space-between;
+}
+
+/* ── Modal de detalle de habitación ──────────────────────────── */
+.modal--room-detail .modal__body {
+  padding: 0;
+}
+
+.room-detail__gallery {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.room-detail__gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.room-detail__content {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.room-detail__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.room-detail__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-light);
+  color: var(--color-dark);
+  letter-spacing: var(--ls-tight);
+}
+
+.room-detail__price-block {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.room-detail__price-label {
+  font-family: var(--font-accent);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-gray);
+}
+
+.room-detail__price {
+  font-family: var(--font-heading);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-navy);
+}
+
+.room-detail__price-per {
+  font-size: var(--fs-sm);
+  color: var(--color-gray);
+  font-weight: var(--fw-regular);
+}
+
+/* Separador dorado */
+.room-detail__divider {
+  height: 1px;
+  background: var(--divider-gold);
+  border: none;
+}
+
+/* Info rápida: camas, personas */
+.room-detail__quick-info {
+  display: flex;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.room-detail__info-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.room-detail__info-icon {
+  font-size: var(--fs-2xl);
+  color: var(--color-brown-gold);
+}
+
+.room-detail__info-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.room-detail__info-label {
+  font-family: var(--font-accent);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-gray);
+}
+
+.room-detail__info-value {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  color: var(--color-dark);
+}
+
+/* Descripción */
+.room-detail__description {
+  font-size: var(--fs-base);
+  color: var(--color-dark-mid);
+  line-height: var(--lh-relaxed);
+}
+
+/* Amenidades listadas */
+.room-detail__amenities-title {
+  font-family: var(--font-accent);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--color-brown-gold);
+  margin-bottom: var(--space-4);
+}
+
+.room-detail__amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.room-detail__amenity-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-beige);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-sm);
+  color: var(--color-dark-mid);
+}
+
+.room-detail__amenity-icon {
+  font-size: var(--fs-lg);
+  color: var(--color-brown-gold);
+}
+
+/* Rango de fechas disponibles */
+.room-detail__availability {
+  background-color: var(--color-beige);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.room-detail__availability-icon {
+  font-size: var(--fs-2xl);
+  color: var(--color-brown-gold);
+}
+
+.room-detail__availability-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.room-detail__availability-label {
+  font-family: var(--font-accent);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-gray);
+}
+
+.room-detail__availability-dates {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  color: var(--color-navy);
+}
+
+/* ── Modal de confirmación ───────────────────────────────────── */
+.modal--confirm .modal__body {
+  text-align: center;
+  padding: var(--space-12) var(--space-8);
+}
+
+.modal__confirm-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-4);
+  display: block;
+}
+
+.modal__confirm-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-dark);
+  margin-bottom: var(--space-3);
+}
+
+.modal__confirm-text {
+  font-size: var(--fs-base);
+  color: var(--color-gray);
+  line-height: var(--lh-relaxed);
+  max-width: 360px;
+  margin-inline: auto;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .modal {
+    max-height: 95vh;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    margin-top: auto;
+    margin-bottom: 0;
+    max-width: 100%;
+  }
+
+  .modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .modal__header {
+    padding: var(--space-5) var(--space-6);
+  }
+
+  .modal__body {
+    padding: var(--space-6);
+  }
+
+  .modal__footer {
+    padding: var(--space-4) var(--space-6);
+  }
+
+  .room-detail__content {
+    padding: var(--space-6);
+  }
+
+  .room-detail__header {
+    flex-direction: column;
+  }
+
+  .room-detail__price-block {
+    text-align: left;
+  }
+
+  .room-detail__amenities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .room-detail__quick-info {
+    gap: var(--space-5);
+  }
+}
+
+@media (max-width: 480px) {
+  .modal__footer {
+    flex-direction: column-reverse;
+  }
+
+  .modal__footer .btn {
+    width: 100%;
+  }
+
+  .room-detail__name {
+    font-size: var(--fs-2xl);
+  }
+}
